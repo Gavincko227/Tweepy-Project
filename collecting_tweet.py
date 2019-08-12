@@ -146,8 +146,17 @@ def done(handles_list, follow):
 		##        
 
 	#follow = ['209015814', '2228665344', '3062851607', '3062719421'] 	
-	driver = webdriver.Chrome(executable_path=r'C:\Tweepy-Project\chromedriver238.exe')
-	driver.get("file:///C:\Tweepy-Project\htmltemplates\htmltable.html")
+	try:
+		driver = webdriver.Chrome(executable_path=r'C:\Tweepy-Project\chromedriver238.exe')
+		driver.get("file:///C:\Tweepy-Project\htmltemplates\htmltable.html")
+	except:
+		try:
+			driver = webdriver.Chrome(executable_path=r'C:\Tweepy-Project-master\chromedriver238.exe')
+			driver.get("file:///C:\Tweepy-Project-master\htmltemplates\htmltable.html")
+		except Exception as e:
+			print e
+			
+	
 	#root.destroy() # destroys root
 	followstr = map(str, follow) #makes the user id in to string method
 	print(followstr)#check if string in command prompt

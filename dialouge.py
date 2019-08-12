@@ -23,7 +23,7 @@ def messageft(txt, txt1, driver, service):
 			txt.insert(INSERT, 'Say "Hey Compass" to start filteration')  #checking if the microphone is working
 			
 			try:
-				audio = r.listen(source, timeout=2, phrase_time_limit=4)  #2 seconds to say something and then 4 seconds to say a phrase
+				audio = r.listen(source, timeout=2, phrase_time_limit=5)  #2 seconds to say something and then 4 seconds to say a phrase
 				input = r.recognize_google(audio) #the voice input from the user 
 			except:
 				# root1.mainloop()

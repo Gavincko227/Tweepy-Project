@@ -55,7 +55,14 @@ def indexhtml(file):
 				# continue
 			
 	html_string = x.get_html_string() #gets the html string method from the library for the rows in x (the table)
-	html_file = open('/Tweepy-Project/htmltemplates/htmltable.html', 'w') #table.html is opened to write
+	try:
+		html_file = open('/Tweepy-Project/htmltemplates/htmltable.html', 'w') #table.html is opened to write
+	except:
+		try:
+			html_file = open('/Tweepy-Project-master/htmltemplates/htmltable.html', 'w') #table.html is opened to write
+		except Exception as e:
+			print(e)
+			
 	html_file = html_file.write(html_string) # and the html string is written to the html file
 	#tabs = []
 	'''
