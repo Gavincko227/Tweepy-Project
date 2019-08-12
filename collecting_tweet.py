@@ -174,10 +174,13 @@ def done(handles_list, follow):
 	# txt1=tkst.ScrolledText(bottomFrame, width=30, height=10)
 	# txt1.pack(padx=10, pady=30, side=LEFT)
 	# #streambutton = Button(bottomFrame, text="Streaming", command=stream).pack(padx=15, pady=40)	
-	thread = threading.Thread(target=watsonmessage.watsoninput, args=(driver, ))
-	#thread = threading.Thread(target=watsonmessage.watsoninput, args=(txt, ))
-	thread.start()
-	
+	try:
+		thread = threading.Thread(target=watsonmessage.watsoninput, args=(driver, ))
+		#thread = threading.Thread(target=watsonmessage.watsoninput, args=(txt, ))
+		thread.start()
+	except Exception as e:
+		print(e)
+		
 	twitter_streamer = streaming.TwitterStreamer() #creates an object called from teh streamingcollectingtwee tfile to twitter streamer
 	twitter_streamer.stream_tweets('all_tweets.csv', 'datacollection.csv', followstr, driver, handles_list)	#call stream_tweet method in streamingcollecting tweet file
 	root1.mainloop()
