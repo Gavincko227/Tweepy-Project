@@ -3,7 +3,7 @@ ibm_watson==3.0.4
 PyAudio==0.2.11
 pandas==0.24.2
 prettytable==0.7.2
-Flask==1.0.2
+Flask==2.3.2
 pytz==2019.1
 SpeechRecognition==3.8.1
 more_itertools==4.2.0
